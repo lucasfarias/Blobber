@@ -3,6 +3,7 @@
 <head>
 	<title>Blobber Parser</title>
   <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <style>
     html, body {
       margin: 0;
@@ -10,9 +11,9 @@
       height: 100%;
     }
     textarea { font-size: 18px; }
-    #codeArea, #jsText, #astText, #outputText { 
+    #codeArea { 
       width: 45%;
-      height: 45%;
+      height: 94%;
       padding: 10px 15px; 
       font-size: 16px;
       margin: 10px;
@@ -26,9 +27,13 @@
       font-size: 16px;
       border: none;
       position: absolute;
-      left: 38%;
-      top: 42%;
+      left: 40%;
+      top: 90%;
       z-index: 9;
+    }
+    .ace_scrollbar {
+      background-color: azure;
+      opacity: 0.3;
     }
   </style>
 
@@ -43,42 +48,26 @@
     })();
     function submitCode(){
       var code = editor.getValue();
-      outputText.innerHTML = '';
+      editor.setValue(JSON.stringify(JSON.parse(code), null, 2));
+      editor.gotoLine(1);
+      $('.ace_content').animate({marginLeft: "0px"});
+      outputText.innerHTML = "";
       
     }     
 	</script>
 
 </head>
 <body>
-  <button class="btn-parser" onclick='submitCode()'>Parse it!</button>
-  <div id="codeArea">Insira o Log aqui!</div>
-  <pre id="jsText"></pre>
-  <pre id="astText"></pre>
-  <pre id="outputText"></pre>
+  <button class="btn-parser" onclick='submitCode()'>Fix it!</button>
+  <div id="codeArea">Insert your log here!</div>
 
   <script type="text/javascript" src="vendor/ace.js"></script>
   <script type="text/javascript">
     var editor = ace.edit("codeArea");
     editor.setTheme("ace/theme/github");
     editor.getSession().setTabSize(2);
-    editor.getSession().setMode("ace/mode/java");
+    editor.getSession().setMode("ace/mode/json");
     editor.$blockScrolling = Infinity;
-    var jseditor = ace.edit("jsText");
-    jseditor.setTheme("ace/theme/textmate");
-    jseditor.getSession().setTabSize(2);
-    jseditor.getSession().setMode("ace/mode/javascript");
-    jseditor.setHighlightActiveLine(false);
-    jseditor.setOption('showGutter', false);
-    jseditor.setReadOnly(true);
-    jseditor.$blockScrolling = Infinity;
-    var astHigh = ace.edit("astText");
-    astHigh.setTheme("ace/theme/github");
-    astHigh.getSession().setTabSize(2);
-    astHigh.getSession().setMode("ace/mode/json");
-    astHigh.setHighlightActiveLine(false);
-    astHigh.setOption('showGutter', false);
-    astHigh.setReadOnly(true);
-    astHigh.$blockScrolling = Infinity;
   </script>
 </body>
 </html>
