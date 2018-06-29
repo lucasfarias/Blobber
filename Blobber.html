@@ -4,57 +4,9 @@
 	<title>Blobber Parser</title>
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    textarea { font-size: 18px; }
-    #codeArea { 
-      width: 45%;
-      height: 94%;
-      padding: 10px 15px; 
-      font-size: 16px;
-      margin: 10px;
-      border: 1px solid silver;
-      display: inline-block;
-      overflow: hidden;
-    }
-    .btn-parser {
-      padding: 10px 25px;
-      background-color: #E6DB74;
-      font-size: 16px;
-      border: none;
-      position: absolute;
-      left: 40%;
-      top: 90%;
-      z-index: 9;
-    }
-    .ace_scrollbar {
-      background-color: azure;
-      opacity: 0.3;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="Blobber.css">
+  <script src="Blobber.js"></script>
 
-  <script src="blobber.js"></script>
-	<script>
-    (function() {
-      var oldLog = console.log;
-      console.log = function(message){
-        outputText.innerHTML += (message + '\n');
-        oldLog.apply(console, arguments);
-      };
-    })();
-    function submitCode(){
-      var code = editor.getValue();
-      editor.setValue(JSON.stringify(JSON.parse(code), null, 2));
-      editor.gotoLine(1);
-      $('.ace_content').animate({marginLeft: "0px"});
-      outputText.innerHTML = "";
-      
-    }     
-	</script>
 
 </head>
 <body>
