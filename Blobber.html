@@ -3,7 +3,10 @@
 <head>
 	<title>Blobber Parser</title>
   <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" >
   <link rel="stylesheet" type="text/css" href="Blobber.css">
   <script src="Blobber.js"></script>
 
@@ -12,7 +15,23 @@
 <body>
   <button class="btn-parser" onclick='submitCode()'>Fix it!</button>
   <div id="codeArea">Insert your log here!</div>
+  <div id="bSide">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="nav-link text-light">Select your dataset:</div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+          <button class="dropdown-item" type="button">Action</button>
+          <button class="dropdown-item" type="button">Another action</button>
+          <button class="dropdown-item" type="button">Something else here</button>
+        </div>
+      </div>
 
+      
+    </nav>
+  </div>
   <script type="text/javascript" src="vendor/ace.js"></script>
   <script type="text/javascript">
     var editor = ace.edit("codeArea");

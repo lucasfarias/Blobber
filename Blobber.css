@@ -3,7 +3,11 @@
       padding: 0;
       height: 100%;
     }
-    textarea { font-size: 18px; }
+
+    textarea { 
+      font-size: 18px; 
+    }
+
     #codeArea { 
       width: 45%;
       height: 94%;
@@ -11,7 +15,7 @@
       font-size: 16px;
       margin: 10px;
       border: 1px solid silver;
-      display: inline-block;
+      float: left;
       overflow: hidden;
     }
     .btn-parser {
@@ -28,3 +32,23 @@
       background-color: azure;
       opacity: 0.3;
     }
+
+    #bSide {
+    width: 45%;
+    height: 94%;
+    font-size: 16px;
+    margin: 10px;
+    border: 1px solid silver;
+    overflow: hidden;
+    display: inline-block;
+    }
+
+    .dropdown {
+      width: 40%;
+    }
+
+    #dropdownMenu{
+      width: 150%;
+    }
+
+    
