@@ -7,10 +7,10 @@
 })();
 
 var dataSet = {
-  default : {
-      1 : "carrier",
-      2 : "errorcode"
-  }
+  "Default Android LB" : ["carrier", "clver", "devmod", "errorcode", "errorstring", "esn", "event_utc_ms", "netspec", "nettype", "platformType", "platformVersion", "uiver", "via", "xid" ],
+  "A.R.G.U.S. Device LB" : []
+
+
 }
 
 

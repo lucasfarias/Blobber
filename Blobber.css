@@ -19,14 +19,8 @@
       overflow: hidden;
     }
     .btn-parser {
-      padding: 10px 25px;
       background-color: #E6DB74;
-      font-size: 16px;
-      border: none;
-      position: absolute;
-      left: 40%;
-      top: 90%;
-      z-index: 9;
+      margin-left: 20px;
     }
     .ace_scrollbar {
       background-color: azure;
@@ -45,10 +39,12 @@
 
     .dropdown {
       width: 40%;
+      max-width: 200px;
     }
 
     #dropdownMenu{
       width: 150%;
+      max-width: 200px;
     }
 
     
